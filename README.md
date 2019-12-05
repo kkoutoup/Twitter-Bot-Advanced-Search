@@ -14,7 +14,10 @@ Helping out the team's performance analyst collect data to let Committee teams k
 - Mentions i.e. an MP sending out a tweet that includes a Committee's twitter handle
 
 ### File structure
-Main file `tweet-advanced-search.py`
+Main file `tweet-advanced-search.py` that imports the following module
+```
+return_stats.py
+```
 
 ### Dependencies
 Built with Python 3.6.4 and the following modules
