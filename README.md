@@ -16,7 +16,8 @@ Helping out the team's performance analyst collect data to let Committee teams k
 ### File structure
 Main file `tweet-advanced-search.py` that imports the following module
 ```
-return_stats.py
+tweet-advanced-search.py
+|_return_stats.py
 ```
 
 ### Dependencies
