@@ -111,13 +111,14 @@ class TwitterBot:
       retweets_pattern = re.compile(r"(\d+)\s+Retweets") # used to extract retweets
       likes_pattern = re.compile(r"(\d+)\s+likes") # used to extract likes
       for item in self.no_duplicates:
+        # Tweet information (name, handle, date, tweet text)
         item = item.split('collected data')
         Tweet_info = item[0]
         Name = Tweet_info.split('\n')[0]
         Twitter_Handle = Tweet_info.split('\n')[1]
         Date = Tweet_info.split('\n')[3]
         Tweet_Text = re.sub(pattern, '', (''.join(Tweet_info.split('\n')[4:])))
-        # Tweet Stats
+        # Tweet Stats (replies, retweets, likes)
         Tweet_stats = item[1]
         Replies = return_stats(Tweet_stats, replies_pattern)
         Retweets = return_stats(Tweet_stats, retweets_pattern)
