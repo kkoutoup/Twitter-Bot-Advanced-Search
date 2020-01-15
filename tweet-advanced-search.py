@@ -103,7 +103,7 @@ class TwitterBot:
   # write to csv
   def write_to_csv(self):
     print("=> Writing to csv")
-    with open("tweeties.csv", "w", encoding='utf-8') as csv_file:
+    with open("tweeties.csv", "w") as csv_file:
       csv_writer = csv.writer(csv_file, lineterminator = '\n')
       csv_writer.writerow(['Name', 'Twitter Handle', 'Date', 'Tweet', 'Replies', 'Retweets', 'Likes'])
       pattern = re.compile(r"\u200d") # used further down to remove unicode character (\u200d) so that writing to csv doesn't break
