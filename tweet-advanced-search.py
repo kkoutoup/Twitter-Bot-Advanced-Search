@@ -106,7 +106,7 @@ class TwitterBot:
     with open("tweeties.csv", "w") as csv_file:
       csv_writer = csv.writer(csv_file, lineterminator = '\n')
       csv_writer.writerow(['Name', 'Twitter Handle', 'Date', 'Tweet', 'Replies', 'Retweets', 'Likes'])
-      pattern = re.compile(r"\u200d") # used further down to remove unicode character (\u200d) so that writing to csv doesn't break
+      pattern = re.compile(r"[^\x00-\x7F]+") # used further down to remove unicode characters so that writing to csv doesn't break
       replies_pattern = re.compile(r"(\d+)\s+replies") # used to extract replies to tweets
       retweets_pattern = re.compile(r"(\d+)\s+Retweets") # used to extract retweets
       likes_pattern = re.compile(r"(\d+)\s+likes") # used to extract likes
