@@ -81,8 +81,8 @@ class TwitterBot:
         else:
           while True: # handling endless scrolling / dynamically loaded data
             combined = driver.execute_script("return window.innerHeight + window.scrollY")
-            docBodHeight = driver.execute_script("return document.body.scrollHeight")
-            if combined == docBodHeight: # if we reach the bottom of the page continue with next term / break loop
+            doc_body_height = driver.execute_script("return document.body.scrollHeight")
+            if combined == doc_body_height: # if we reach the bottom of the page continue with next term / break loop
               do_i_wait = False
               break
             else:
